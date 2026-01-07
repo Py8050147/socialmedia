@@ -1,6 +1,9 @@
 
 import fastifyMongodb from "@fastify/mongodb";
 import { DB_NAME } from "../constant.js";
+import dotenv from "dotenv"
+
+dotenv.config()
 
 export const db = async (fastify) => {
   try {

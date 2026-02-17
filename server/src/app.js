@@ -5,6 +5,7 @@ import cors from "@fastify/cors";
 import cookies from "@fastify/cookie";
 import { userRoutes } from "./router/userRouter.js";
 import { postRoutes } from "./router/postRouter.js";
+import { followersRoute } from "./router/followersRouter.js";
 
 export const configureApp = async (fastify) => {
     // Register CORS
@@ -24,6 +25,7 @@ export const configureApp = async (fastify) => {
     // Register routes with prefix
     fastify.register(userRoutes, { prefix: '/api' });
     fastify.register(postRoutes, { prefix: '/api' })
+    fastify.register(followersRoute, { prefix: '/api' })
 
     // Health check route
     fastify.get('/health', async (request, reply) => {

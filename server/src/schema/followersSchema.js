@@ -4,6 +4,7 @@ export const followerSchema = {
         id: { type: 'string' },
         followers_id: { type: "string" },
         following_id: { type: 'string' },
+
         created_at: { type: 'string', format: 'date-time' },
         updated_at: { type: 'string', format: 'date-time' }
     },

@@ -7,6 +7,7 @@ import { userRoutes } from "./router/userRouter.js";
 import { postRoutes } from "./router/postRouter.js";
 import { followersRoute } from "./router/followersRouter.js";
 import { commentsRoutes } from "./router/commentsRouter.js";
+import { storyRoutes } from "./router/storyRouter.js";
 
 export const configureApp = async (fastify) => {
     // Register CORS
@@ -28,6 +29,7 @@ export const configureApp = async (fastify) => {
     fastify.register(postRoutes, { prefix: '/api' })
     fastify.register(followersRoute, { prefix: '/api' })
     fastify.register(commentsRoutes, { prefix: '/api' })
+    fastify.register(storyRoutes, { prefix: '/api' })
 
     // Health check route
     fastify.get('/health', async (request, reply) => {
